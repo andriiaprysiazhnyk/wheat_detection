@@ -1,0 +1,13 @@
+torch~=1.7.1+cpu
+segmentation_models_pytorch
+torchvision~=0.8.2+cpu
+tqdm
+numpy
+albumentations
+PyYAML~=5.3.1
+torchsummary
+scikit-learn~=0.24.0
+opencv-python
+tensorboard
+pillow~=8.1.0
+pandas~=1.2.0

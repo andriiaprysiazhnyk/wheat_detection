@@ -1,0 +1,35 @@
+log_dir: /mnt/store/userdata/aprysiazhnyk/wheat_detection/logs
+
+train:
+  path: /mnt/store/userdata/aprysiazhnyk/wheat_detection/data/train
+  transform:
+    size: 512
+    min_visibility: 0.2
+    names: [crop_or_resize, flip, change_brightness]
+
+val:
+  path: /mnt/store/userdata/aprysiazhnyk/wheat_detection/data/val
+  transform:
+    size: 512
+    min_visibility: 0.2
+    names: [resize]
+
+model:
+  arch: retina_net
+  pretrained: True
+  pretrained_backbone: True
+  trainable_backbone_layers: 5
+
+batch_size: 16
+num_epochs: 200
+
+optimizer:
+  name: adam
+  lr: [0.0001, 0.0009]
+
+scheduler:
+  name: step
+  # factor: 0.5
+  # patience: 2
+  step_size: 40
+  gamma: 0.8
